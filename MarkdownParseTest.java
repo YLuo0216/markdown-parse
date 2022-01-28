@@ -19,4 +19,10 @@ public class MarkdownParseTest {
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }
     
+    @Test
+    public void getLinks2() throws IOException {
+        Path filename = Path.of("testFile2.md");
+        String contents = Files.readString(filename);
+        assertEquals(List.of("https://link1.com", "https://link2.com"), MarkdownParse.getLinks(contents));
+    }
 }
